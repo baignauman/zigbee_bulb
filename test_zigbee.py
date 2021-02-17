@@ -1,6 +1,4 @@
 import requests
-import json
-import zigbee_api
 
 
 def turn_on():
