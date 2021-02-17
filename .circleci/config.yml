@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:2.7.17
+      - image: circleci/python:3.9.1
 
     working_directory: ~/repo
 
@@ -13,14 +13,12 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            pip install virtualenv
-            python -m virtualenv calculator
-            source calculator/bin/activate
+            python -m venv helowld
+            ./helowld/Scripts/activate
             pip install -r requirements.txt
       # Step 3: run linter and tests
       - run:
           name: run tests
           command: |
-            source calculator/bin/activate
-            flake8 --exclude=calculator* --statistics
-            pytest --ignore=calculator
+            ./helowld/Scripts/activate
+            flake8 --exclude=helowld* --statistics
