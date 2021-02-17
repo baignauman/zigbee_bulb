@@ -20,5 +20,5 @@ jobs:
       - run:
           name: run tests
           command: |
-            . helowld/Scripts/activate
+            . helowld/bin/activate
             flake8 --exclude=helowld* --statistics
